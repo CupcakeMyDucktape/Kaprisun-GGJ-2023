@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 376936295}
   - component: {fileID: 376936294}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Rock?
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

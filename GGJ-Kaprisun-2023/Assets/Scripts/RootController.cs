@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class RootController : MonoBehaviour
 {
+    public float speedMultiplier;
+    PlayerController playerController;
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         print(other.gameObject.tag);
         if (other.gameObject.CompareTag("Dirt"))
         {
@@ -15,6 +18,18 @@ public class RootController : MonoBehaviour
         {
             other.gameObject.tag = "Rooted Dirt";
             other.enabled = false;
+        }
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerController = other.GetComponent<PlayerController>();
+            playerController.initialMaxSpeed *= speedMultiplier;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerController.initialMaxSpeed /= speedMultiplier;
         }
     }
 }

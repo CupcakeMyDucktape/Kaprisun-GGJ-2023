@@ -21,6 +21,7 @@ public class PlayerRoots : MonoBehaviour
     public PlayerController playerController;
     public MeshRenderer meshRenderer;
     public Transform RespawnAnchor;
+    public Transform LocalRespawnAnchor;
     public Object rootPrefab;
     public Transform rootOffset;
     public GameObject rootObject;
@@ -73,9 +74,11 @@ public class PlayerRoots : MonoBehaviour
 
         //Edited out to use a seperate respawn anchor :) 
         //RespawnAnchor.transform.position = rootOffset.transform.position;
+        //RespawnAnchor.transform.rotation = transform.rotation;
+        LocalRespawnAnchor.position = rootOffset.transform.position;
+        LocalRespawnAnchor.rotation = transform.rotation;
 
-        RespawnAnchor.transform.rotation = transform.rotation;
-        StartCoroutine(Respawn());
+        StartCoroutine(LocalRespawn());
     }
 
     private IEnumerator Respawn()
@@ -86,6 +89,16 @@ public class PlayerRoots : MonoBehaviour
         respawning = true;
         transform.localScale = Vector3.zero;
         transform.position = RespawnAnchor.transform.position;
+        meshRenderer.enabled = true;
+    }
+    private IEnumerator LocalRespawn()
+    {
+        meshRenderer.enabled = false;
+        playerController.enabled = false;
+        yield return new WaitForSeconds(respawnDelay);
+        respawning = true;
+        transform.localScale = Vector3.zero;
+        transform.position = LocalRespawnAnchor.transform.position;
         meshRenderer.enabled = true;
     }
 }
