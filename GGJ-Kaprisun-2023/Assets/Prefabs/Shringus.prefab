@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3179471877133346379}
-  initialMaxSpeed: 100
-  initialAcceleration: 0.06
-  rotationSpeed: 0.1
+  initialMaxSpeed: 300
+  initialAcceleration: 1
+  rotationSpeed: 0.2
   speed: 0
   acceleration: 0
   move: {x: 0, y: 0}
