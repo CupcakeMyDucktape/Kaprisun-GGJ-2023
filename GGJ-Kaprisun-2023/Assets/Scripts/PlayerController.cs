@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public InputMap input;
-    public Rigidbody rb;
+    public Rigidbody2D rb;
 
     public float initialMaxSpeed;
     public float initialAcceleration;
