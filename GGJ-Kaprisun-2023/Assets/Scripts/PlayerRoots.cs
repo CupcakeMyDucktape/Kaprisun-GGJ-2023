@@ -46,6 +46,8 @@ public class PlayerRoots : MonoBehaviour
             root = rootMax;
             TakeRoot();
         }
+
+        //Needs to look at speed not the input but the percentage of the current speed based off the max speed. 
         if(playerController.move.magnitude > rootPlayerSpeedFraction && rooted == true)
         {
             root -= rootDrainRate * Time.deltaTime;
