@@ -123,6 +123,41 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!23 &92733471 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3179471877133346383, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+  m_PrefabInstance: {fileID: 1366215664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &158502013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158502014}
+  m_Layer: 0
+  m_Name: RespawnAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158502014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158502013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.85788393, y: 0.2949955, z: 2.7542846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &378394828
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +312,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093670710782804542, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: rootPrefab
+      value: 
+      objectReference: {fileID: 3671121106079651949, guid: f668c1b800585d641a13f8cbff166750, type: 3}
+    - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 92733471}
+    - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: respawnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: RespawnAnchor
+      value: 
+      objectReference: {fileID: 158502014}
     - target: {fileID: 3179471877133346377, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: m_RootOrder
       value: 2
