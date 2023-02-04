@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SporeText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerRoots player;
+    public TMP_Text text;
+    private void Start()
     {
-        
+        player = FindObjectOfType<PlayerRoots>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        text.text = "Spores:" + player.sporeCount;
     }
 }
