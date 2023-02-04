@@ -64,11 +64,16 @@ public class PlayerRoots : MonoBehaviour
 
     private void TakeRoot()
     {
-        Destroy(rootObject);
+        //Leave old objects around the level 
+        //Destroy(rootObject);
+        //add if statement if the terrain is good reset the respawn position to the rootoffset. If the terrain is bad leave the respawn anchor
         rootObject = (GameObject)PrefabUtility.InstantiatePrefab(rootPrefab);
         rootObject.transform.position = transform.position;
         rootObject.transform.rotation = transform.rotation;
-        RespawnAnchor.transform.position = rootOffset.transform.position;
+
+        //Edited out to use a seperate respawn anchor :) 
+        //RespawnAnchor.transform.position = rootOffset.transform.position;
+
         RespawnAnchor.transform.rotation = transform.rotation;
         StartCoroutine(Respawn());
     }
