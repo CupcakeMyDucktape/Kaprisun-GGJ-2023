@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3179471877133346383}
   - component: {fileID: 3856083687958194904}
   - component: {fileID: 2801775991909880336}
-  - component: {fileID: 3179471877133346382}
-  - component: {fileID: 3179471877133346379}
+  - component: {fileID: -4273230780406039472}
+  - component: {fileID: -5623176770449930987}
   m_Layer: 0
   m_Name: Shringus
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fa76efd28071244aafcefea1f2ba8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3179471877133346379}
+  rb: {fileID: -5623176770449930987}
   initialMaxSpeed: 300
   initialAcceleration: 1
   rotationSpeed: 0.2
@@ -125,39 +125,61 @@ MonoBehaviour:
   rootDrainRate: 40
   rooted: 0
   rootPosition: {x: 0, y: 0, z: 0}
+  respawnDelay: 0.5
+  respawning: 0
   playerController: {fileID: 3856083687958194904}
-  rootPrefab: {fileID: 5490770950751101908, guid: d4bb98f286fc3eb4ab91aaf1c587ded0, type: 3}
+  meshRenderer: {fileID: 3179471877133346383}
+  RespawnAnchor: {fileID: 0}
+  rootPrefab: {fileID: 3671121106079651949, guid: f668c1b800585d641a13f8cbff166750, type: 3}
   rootOffset: {fileID: 1093670710782804542}
   rootObject: {fileID: 0}
---- !u!65 &3179471877133346382
-BoxCollider:
+--- !u!61 &-4273230780406039472
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179471877133346381}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3179471877133346379
-Rigidbody:
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &-5623176770449930987
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179471877133346381}
-  serializedVersion: 2
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
   m_Mass: 1
-  m_Drag: 0
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_Constraints: 120
+  m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3179471878307877828
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +191,6 @@ GameObject:
   - component: {fileID: 3179471878307877829}
   - component: {fileID: 3179471878307877824}
   - component: {fileID: 3179471878307877831}
-  - component: {fileID: 3179471878307877830}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -240,19 +261,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3179471878307877830
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3179471878307877828}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8648420284538535622
 GameObject:
   m_ObjectHideFlags: 0
