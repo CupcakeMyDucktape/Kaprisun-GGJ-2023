@@ -10,16 +10,16 @@ public class RootController : MonoBehaviour
     {
 
         print(other.gameObject.tag);
-        if (other.gameObject.CompareTag("Dirt"))
+        if (other.gameObject.CompareTag("Dirt")) //On collision with dirt: Changes tag to Rooted Dirt
         {
             other.gameObject.tag = "Rooted Dirt";
         }
-        if (other.gameObject.CompareTag("Rock"))
+        if (other.gameObject.CompareTag("Rock")) //On collision with rocks: Changes tag to Rooted Dirt and disables Collider2D
         {
             other.gameObject.tag = "Rooted Dirt";
             other.enabled = false;
         }
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player")) //On collision with player: Gets PlayerController and applies speed multiplier
         {
             playerController = other.GetComponent<PlayerController>();
             playerController.initialMaxSpeed *= speedMultiplier;
@@ -27,7 +27,7 @@ public class RootController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) //On collision exit with player: Undoes speed multiplier
         {
             playerController.initialMaxSpeed /= speedMultiplier;
         }
