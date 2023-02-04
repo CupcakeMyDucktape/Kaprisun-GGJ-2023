@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        speed *= acceleration;
         move *= speed;
         move *= Time.deltaTime;
         velocity.x = Mathf.SmoothDamp(velocity.x, move.x, ref smoothXVelocity, 0.06f); 
@@ -65,8 +66,10 @@ public class PlayerController : MonoBehaviour
         {
             SetRotationToMove();
         }
+        else speed = 0f;
     }
 
+    
 
     private void SetRotationToMove()
     {
