@@ -13,6 +13,6 @@ public class SporeText : MonoBehaviour
     }
     private void Update()
     {
-        text.text = "Spores:" + player.root;
+        text.text = "Spores:" + player.sporeCount;
     }
 }

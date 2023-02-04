@@ -12,11 +12,14 @@ public class PlayerRoots : MonoBehaviour
     public float rootFillRate;
     public float rootDrainRate;
     public bool rooted;
+    public int sporeCount;
 
     public Vector3 rootPosition;
     public float respawnDelay;
     private Vector3 respawnScaleAccel;
     public bool respawning;
+    public bool terrainBad;
+    public bool terrainGood;
 
     public PlayerController playerController;
     public MeshRenderer meshRenderer;
@@ -65,20 +68,30 @@ public class PlayerRoots : MonoBehaviour
 
     private void TakeRoot()
     {
-        //Leave old objects around the level 
-        //Destroy(rootObject);
-        //add if statement if the terrain is good reset the respawn position to the rootoffset. If the terrain is bad leave the respawn anchor
         rootObject = (GameObject)PrefabUtility.InstantiatePrefab(rootPrefab);
         rootObject.transform.position = transform.position;
         rootObject.transform.rotation = transform.rotation;
 
-        //Edited out to use a seperate respawn anchor :) 
-        //RespawnAnchor.transform.position = rootOffset.transform.position;
-        //RespawnAnchor.transform.rotation = transform.rotation;
-        LocalRespawnAnchor.position = rootOffset.transform.position;
-        LocalRespawnAnchor.rotation = transform.rotation;
-
-        StartCoroutine(LocalRespawn());
+        if (terrainBad == true)
+        {
+            LocalRespawnAnchor.position = rootOffset.transform.position;
+            LocalRespawnAnchor.rotation = transform.rotation;
+            sporeCount--;
+            StartCoroutine(Respawn());
+        }
+        if(terrainGood == true)
+        {
+            RespawnAnchor.transform.position = rootOffset.transform.position;
+            RespawnAnchor.transform.rotation = transform.rotation;
+            sporeCount++;
+            StartCoroutine(Respawn());
+        }
+        else
+        {
+            RespawnAnchor.transform.position = rootOffset.transform.position;
+            RespawnAnchor.transform.rotation = transform.rotation;
+            StartCoroutine(Respawn());
+        }
     }
 
     private IEnumerator Respawn()
