@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3179471877133346379}
   initialMaxSpeed: 300
-  initialAcceleration: 0.2
+  initialAcceleration: 1
   rotationSpeed: 0.2
   speed: 0
   acceleration: 0
