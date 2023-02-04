@@ -21,6 +21,7 @@ public class PlayerRoots : MonoBehaviour
     public bool terrainBad;
     public bool terrainGood;
 
+    public GameManager gameManager;
     public PlayerController playerController;
     public MeshRenderer meshRenderer;
     public Transform RespawnAnchor;
@@ -93,6 +94,10 @@ public class PlayerRoots : MonoBehaviour
             RespawnAnchor.transform.position = rootOffset.transform.position;
             RespawnAnchor.transform.rotation = transform.rotation;
             StartCoroutine(Respawn());
+        }
+        if(sporeCount < 0)
+        {
+            gameManager.GameOver();
         }
     }
 
