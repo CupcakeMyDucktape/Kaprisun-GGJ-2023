@@ -112,6 +112,8 @@ MonoBehaviour:
   rotationSpeed: 0.2
   speed: 0
   acceleration: 0
+  playeranim: {fileID: 0}
+  roots: []
   move: {x: 0, y: 0}
 --- !u!114 &363630575799328153
 MonoBehaviour:
@@ -137,6 +139,7 @@ MonoBehaviour:
   respawning: 0
   terrainBad: 0
   terrainGood: 0
+  nearRoot: 0
   gameManager: {fileID: 0}
   playerController: {fileID: 363630575799328152}
   meshRenderer: {fileID: 363630575799328135}
@@ -145,6 +148,15 @@ MonoBehaviour:
   rootPrefab: {fileID: 3179471877133346381, guid: f668c1b800585d641a13f8cbff166750, type: 3}
   rootOffset: {fileID: 363630577397846199}
   rootObject: {fileID: 0}
+  Root:
+    m_Name: Root
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c2a82fc1-e819-40ff-8a7b-55f0f2f53397
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!61 &363630575799328154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -300,7 +312,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 082b9ca7af84686479cf7bf6bce8eefa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -395,8 +407,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cf1e5cbd9c642734ba99bd7a232bcd3e, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -589,11 +601,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  roots: {fileID: 0}
   speedMod: {fileID: 0}
   walk: {fileID: 8558324141031507248}
   uproot: {fileID: 60547070235243886}
   sizzle: {fileID: 8338474103354670652}
   isSlow: 0
+  touchLight: 0
 --- !u!1 &363630576086412295
 GameObject:
   m_ObjectHideFlags: 0
