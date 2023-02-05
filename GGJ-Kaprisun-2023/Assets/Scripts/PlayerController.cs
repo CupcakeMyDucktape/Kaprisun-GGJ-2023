@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             SetRotationToMove();
         }
+        //Add rooting animation when the player decides to no longer move
         else speed = 0f;
     }
 
