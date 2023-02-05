@@ -23,6 +23,10 @@ public class RootController : MonoBehaviour
         {
             playerController = other.GetComponent<PlayerController>();
             playerController.initialMaxSpeed *= speedMultiplier;
+            if(playerController.initialMaxSpeed > 450)
+            {
+                playerController.initialMaxSpeed = 450;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other)
