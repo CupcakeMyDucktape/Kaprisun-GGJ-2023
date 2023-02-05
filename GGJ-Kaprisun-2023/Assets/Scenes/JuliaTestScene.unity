@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shringus
       objectReference: {fileID: 0}
+    - target: {fileID: 3856083687958194904, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: originalMaxSpeed
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
 --- !u!1001 &2773217702147750316
