@@ -97,7 +97,7 @@ MonoBehaviour:
   rootOffset: {fileID: 363630577397846199}
   rootObject: {fileID: 0}
   Root:
-    m_Name: 
+    m_Name: Root
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 82f68436-e97d-456e-b1a2-08825e61f2e6
@@ -356,7 +356,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cf1e5cbd9c642734ba99bd7a232bcd3e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
