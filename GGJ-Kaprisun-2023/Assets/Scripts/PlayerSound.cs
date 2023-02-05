@@ -6,7 +6,7 @@ public class PlayerSound : MonoBehaviour
 {
     public PlayerController player;
     public PlayerRoots roots;
-    public SpeedModifier speedMod;
+   // public SpeedModifier speedMod;
     public AudioSource walk;
     public AudioSource uproot;
     public AudioSource sizzle;
@@ -17,7 +17,7 @@ public class PlayerSound : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         roots = FindObjectOfType<PlayerRoots>();
-        speedMod = FindObjectOfType<SpeedModifier>();
+        //speedMod = FindObjectOfType<SpeedModifier>();
     }
 
     // Update is called once per frame
@@ -40,14 +40,14 @@ public class PlayerSound : MonoBehaviour
             isSlow = false;
             uproot.Play();
         }
-        if (speedMod.speedMultiplier <= 1)
-        {
-            touchLight = true;
-            sizzle.Play();
-        }
-        if (speedMod.speedMultiplier > 1)
-        {
-            touchLight = false;
-        }
+        //if (speedMod.speedMultiplier <= 1)
+        //{
+        //    touchLight = true;
+        //    sizzle.Play();
+        //}
+        //if (speedMod.speedMultiplier > 1)
+        //{
+        //    touchLight = false;
+        //}
     }
 }
