@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5838551513678715132}
   - component: {fileID: 1947726107416835568}
   - component: {fileID: 2606112708449127858}
-  - component: {fileID: 7432939542892176317}
   - component: {fileID: 5250978638014716015}
+  - component: {fileID: 3525890741424584442}
+  - component: {fileID: 7737167301704892217}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -162,7 +163,20 @@ MonoBehaviour:
   m_EnableTangents: 0
   m_GeometryCached: 0
   m_UTess2D: 0
---- !u!60 &7432939542892176317
+--- !u!114 &5250978638014716015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670935156420335882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d150c6962d5e33540a132c04b984c3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainBad: 1
+--- !u!60 &3525890741424584442
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,14 +201,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.9995, y: -1.9995}
-      - {x: -1.9995, y: 1.9995}
-      - {x: 1.9995, y: 1.9995}
-      - {x: 1.9995, y: -1.9995}
-      - {x: -1.7054074, y: -1.9995}
-      - {x: -1.75, y: -1.9995}
-      - {x: -1.9995, y: -1.9995}
---- !u!114 &5250978638014716015
+    - - {x: -13.70608, y: -0.15906727}
+      - {x: -3.9265935, y: 5.1775517}
+      - {x: -3.9989607, y: 7.59451}
+      - {x: 8.440286, y: 13.217376}
+      - {x: 17.056866, y: 14.500784}
+      - {x: 25.136465, y: 10.674325}
+      - {x: 25.670996, y: 7.3206697}
+      - {x: 6.672268, y: 6.4556565}
+      - {x: 1.3592051, y: -5.206476}
+      - {x: -13.517924, y: -0.22210482}
+      - {x: -13.70608, y: -0.15906727}
+--- !u!114 &7737167301704892217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 670935156420335882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d150c6962d5e33540a132c04b984c3b0, type: 3}
+  m_Script: {fileID: 11500000, guid: cd00d7f32bdb0d541ac42c45c8207fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainBad: 1
+  speedMultiplier: 0.2
