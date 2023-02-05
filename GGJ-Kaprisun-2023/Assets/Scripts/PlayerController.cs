@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float acceleration;
 
+    public Animator playeranim;
+    public Animator[] roots;
+
     
     private InputAction Move;
     public Vector2 move;
@@ -24,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private float smoothRotation;
 
     private float moveRotation;
+
+    
 
 
 
@@ -67,9 +72,25 @@ public class PlayerController : MonoBehaviour
         if (move.magnitude > 0)
         {
             SetRotationToMove();
+
+            playeranim.SetBool("Root Down", false);
+            foreach (Animator root in roots)
+            {
+                root.SetBool("Rooting", false);
+            }
+
+
         }
-        //Add rooting animation when the player decides to no longer move
-        else speed = 0f;
+        //Added rooting animation when the player decides to no longer move
+        else
+        {
+            speed = 0f;
+            playeranim.SetBool("Root Down", true);
+            foreach (Animator root in roots)
+            {
+                root.SetBool("Rooting", true);
+            }
+        }
     }
 
     
