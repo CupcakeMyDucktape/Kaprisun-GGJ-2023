@@ -16,4 +16,14 @@ public class SceneScript : MonoBehaviour
         //Application.Quit();
         Destroy(gameObject);
     }
+
+    public void LoadBuildIndex(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
+    }
+
+    public void MoveToLevelSelect()
+    {
+        transform.Translate(0, 400, 0);
+    }
 }
