@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!23 &92733471 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3179471877133346383, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-  m_PrefabInstance: {fileID: 1366215664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158502013
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +153,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &309603324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 363630577079482172, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+  m_PrefabInstance: {fileID: 1366215664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &376936293
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,11 +688,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1098661364 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3179471877133346377, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-  m_PrefabInstance: {fileID: 1366215664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1366215664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,6 +695,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 363630575799328153, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: RespawnAnchor
+      value: 
+      objectReference: {fileID: 158502014}
+    - target: {fileID: 363630575799328153, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: LocalRespawnAnchor
+      value: 
+      objectReference: {fileID: 979337068}
+    - target: {fileID: 363630577079482172, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 363630577079482172, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 363630577079482172, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1093670710782804542, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.45
@@ -715,7 +730,7 @@ PrefabInstance:
     - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: meshRenderer
       value: 
-      objectReference: {fileID: 92733471}
+      objectReference: {fileID: 0}
     - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: respawnDelay
       value: 0.5
@@ -1444,7 +1459,7 @@ PrefabInstance:
     - target: {fileID: 5083464985650272826, guid: f25097aefe67aab4a8023b37ef7f3727, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1098661364}
+      objectReference: {fileID: 309603324}
     - target: {fileID: 5083464985650272827, guid: f25097aefe67aab4a8023b37ef7f3727, type: 3}
       propertyPath: m_RootOrder
       value: 1
