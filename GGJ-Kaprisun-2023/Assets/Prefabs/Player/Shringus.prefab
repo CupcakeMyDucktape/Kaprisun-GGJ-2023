@@ -136,7 +136,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 363630575799328135}
   RespawnAnchor: {fileID: 0}
   LocalRespawnAnchor: {fileID: 0}
-  rootPrefab: {fileID: 5490770950751101908, guid: d4bb98f286fc3eb4ab91aaf1c587ded0, type: 3}
+  rootPrefab: {fileID: 3179471877133346381, guid: f668c1b800585d641a13f8cbff166750, type: 3}
   rootOffset: {fileID: 363630577397846199}
   rootObject: {fileID: 0}
 --- !u!61 &363630575799328154
