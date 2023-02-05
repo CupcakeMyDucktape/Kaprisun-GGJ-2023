@@ -20,6 +20,7 @@ public class PlayerRoots : MonoBehaviour
     public bool respawning;
     public bool terrainBad;
     public bool terrainGood;
+    public bool nearRoot;
 
     public GameManager gameManager;
     public PlayerController playerController;
@@ -32,26 +33,29 @@ public class PlayerRoots : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(playerController.speed < playerController.originalMaxSpeed * rootPlayerSpeedFraction && root <= rootMax && rooted == false) 
+        if (!nearRoot)
         {
-            root += rootFillRate * Time.deltaTime;
-        }
-        if(playerController.speed > playerController.originalMaxSpeed * rootPlayerSpeedFraction && root > 0 && rooted == false)
-        {
-            root -= rootDrainRate * Time.deltaTime;
-            if(root < 0) { root = 0; }
-        }
-        if(root >= rootMax && rooted == false)
-        {
-            rooted = true;
-            root = rootMax;
-            TakeRoot();
+            if (playerController.speed < playerController.originalMaxSpeed * rootPlayerSpeedFraction && root <= rootMax && rooted == false)
+            {
+                root += rootFillRate * Time.deltaTime;
+            }
+            if (playerController.speed > playerController.originalMaxSpeed * rootPlayerSpeedFraction && root > 0 && rooted == false)
+            {
+                root -= rootDrainRate * Time.deltaTime;
+                if (root < 0) { root = 0; }
+            }
+            if (root >= rootMax && rooted == false)
+            {
+                rooted = true;
+                root = rootMax;
+                TakeRoot();
+            }
         }
 
         //Needs to look at speed not the input but the percentage of the current speed based off the max speed. 
         if(playerController.move.magnitude > rootPlayerSpeedFraction && rooted == true)
         {
-            root -= 50;
+            root -= rootMax / 2;
             rooted = false;
         }
 

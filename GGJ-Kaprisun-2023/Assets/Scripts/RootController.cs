@@ -6,6 +6,7 @@ public class RootController : MonoBehaviour
 {
     public float speedMultiplier;
     PlayerController playerController;
+    PlayerRoots playerRoots;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -22,7 +23,9 @@ public class RootController : MonoBehaviour
         if(other.gameObject.CompareTag("Player")) //On collision with player: Gets PlayerController and applies speed multiplier
         {
             playerController = other.GetComponent<PlayerController>();
+            playerRoots= other.GetComponent<PlayerRoots>();
             playerController.initialMaxSpeed *= speedMultiplier;
+            playerRoots.nearRoot = true;
             if(playerController.initialMaxSpeed > 450)
             {
                 playerController.initialMaxSpeed = 450;
@@ -34,6 +37,7 @@ public class RootController : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) //On collision exit with player: Undoes speed multiplier
         {
             playerController.initialMaxSpeed /= speedMultiplier;
+            playerRoots.nearRoot = false;
         }
     }
 }
