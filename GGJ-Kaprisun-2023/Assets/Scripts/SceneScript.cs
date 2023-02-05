@@ -22,8 +22,8 @@ public class SceneScript : MonoBehaviour
         SceneManager.LoadScene(buildIndex);
     }
 
-    public void MoveToLevelSelect()
+    public void MoveToLevelSelect(Transform canvasTransform)
     {
-        transform.Translate(0, 400, 0);
+        canvasTransform.Translate(0, 180, 0);
     }
 }
