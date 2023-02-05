@@ -32,11 +32,11 @@ public class PlayerRoots : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(playerController.move.magnitude < rootPlayerSpeedFraction && root <= rootMax) 
+        if(playerController.speed < playerController.originalMaxSpeed * rootPlayerSpeedFraction && root <= rootMax && rooted == false) 
         {
             root += rootFillRate * Time.deltaTime;
         }
-        if(playerController.move.magnitude > rootPlayerSpeedFraction && root > 0)
+        if(playerController.speed > playerController.originalMaxSpeed * rootPlayerSpeedFraction && root > 0 && rooted == false)
         {
             root -= rootDrainRate * Time.deltaTime;
             if(root < 0) { root = 0; }
@@ -51,9 +51,10 @@ public class PlayerRoots : MonoBehaviour
         //Needs to look at speed not the input but the percentage of the current speed based off the max speed. 
         if(playerController.move.magnitude > rootPlayerSpeedFraction && rooted == true)
         {
-            root -= rootDrainRate * Time.deltaTime;
+            root -= 50;
             rooted = false;
         }
+
         if(respawning == true)
         {
             transform.localScale = Vector3.SmoothDamp(transform.localScale, Vector3.one, ref respawnScaleAccel, 0.2f);
@@ -64,9 +65,7 @@ public class PlayerRoots : MonoBehaviour
                 transform.localScale = Vector3.one;
             }
         }
-        playerController.speed = playerController.initialMaxSpeed - playerController.initialMaxSpeed * (root/rootMax);
-
-        
+        playerController.speed = playerController.initialMaxSpeed - playerController.initialMaxSpeed * (root/(rootMax+1));
     }
 
     private void TakeRoot()
@@ -77,23 +76,24 @@ public class PlayerRoots : MonoBehaviour
 
         if (terrainBad == true)
         {
-            LocalRespawnAnchor.position = rootOffset.transform.position;
-            LocalRespawnAnchor.rotation = transform.rotation;
             sporeCount--;
-            StartCoroutine(Respawn());
-        }
-        if(terrainGood == true)
-        {
-            RespawnAnchor.transform.position = rootOffset.transform.position;
-            RespawnAnchor.transform.rotation = transform.rotation;
-            sporeCount++;
             StartCoroutine(Respawn());
         }
         else
         {
-            RespawnAnchor.transform.position = rootOffset.transform.position;
-            RespawnAnchor.transform.rotation = transform.rotation;
-            StartCoroutine(Respawn());
+            if (terrainGood == true)
+            {
+                RespawnAnchor.transform.position = rootOffset.transform.position;
+                RespawnAnchor.transform.rotation = transform.rotation;
+                sporeCount++;
+                StartCoroutine(Respawn());
+            }
+            else
+            {
+                LocalRespawnAnchor.transform.position = rootOffset.transform.position;
+                LocalRespawnAnchor.transform.rotation = transform.rotation;
+                StartCoroutine(LocalRespawn());
+            }
         }
         if(sporeCount < 0)
         {
@@ -105,20 +105,26 @@ public class PlayerRoots : MonoBehaviour
     {
         meshRenderer.enabled = false;
         playerController.enabled = false;
+        terrainBad = false;
+        terrainGood = false;
         yield return new WaitForSeconds(respawnDelay);
         respawning = true;
         transform.localScale = Vector3.zero;
         transform.position = RespawnAnchor.transform.position;
+        playerController.initialMaxSpeed = playerController.originalMaxSpeed;
         meshRenderer.enabled = true;
     }
     private IEnumerator LocalRespawn()
     {
         meshRenderer.enabled = false;
         playerController.enabled = false;
+        terrainBad = false;
+        terrainGood = false;
         yield return new WaitForSeconds(respawnDelay);
         respawning = true;
         transform.localScale = Vector3.zero;
         transform.position = LocalRespawnAnchor.transform.position;
+        playerController.initialMaxSpeed = playerController.originalMaxSpeed;
         meshRenderer.enabled = true;
     }
 }
