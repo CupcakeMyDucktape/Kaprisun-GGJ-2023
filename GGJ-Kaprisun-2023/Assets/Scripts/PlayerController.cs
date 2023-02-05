@@ -8,14 +8,12 @@ public class PlayerController : MonoBehaviour
     public InputMap input;
     public Rigidbody2D rb;
 
+    public float originalMaxSpeed;
     public float initialMaxSpeed;
     public float initialAcceleration;
     public float rotationSpeed;
     public float speed;
     public float acceleration;
-
-    public Animator[] roots;
-    public Animator playeranim;
 
     
     private InputAction Move;
@@ -31,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        initialMaxSpeed = originalMaxSpeed;
         speed = initialMaxSpeed;
         acceleration = initialAcceleration;
 
@@ -68,23 +67,9 @@ public class PlayerController : MonoBehaviour
         if (move.magnitude > 0)
         {
             SetRotationToMove();
-
-            foreach (Animator root in roots)
-            {
-                root.SetBool("Rooting", false);
-            }
-            playeranim.SetBool("Root Down", false);
         }
-        else
-        {
-            speed = 0f;
-
-            foreach (Animator root in roots)
-            {
-                root.SetBool("Rooting", true);
-            }
-            playeranim.SetBool("Root Down", true);
-        } 
+        //Add rooting animation when the player decides to no longer move
+        else speed = 0f;
     }
 
     

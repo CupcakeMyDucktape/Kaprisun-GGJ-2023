@@ -13,6 +13,10 @@ public class SpeedModifier : MonoBehaviour
         {
             playerController = other.GetComponent<PlayerController>();
             playerController.initialMaxSpeed *= speedMultiplier;
+            if (playerController.initialMaxSpeed > playerController.originalMaxSpeed * speedMultiplier)
+            {
+                playerController.initialMaxSpeed = playerController.originalMaxSpeed * speedMultiplier;
+            }
         }
     }
 
