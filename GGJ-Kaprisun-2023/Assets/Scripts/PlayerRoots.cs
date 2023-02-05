@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerRoots : MonoBehaviour
 {
@@ -31,6 +32,26 @@ public class PlayerRoots : MonoBehaviour
     public Transform rootOffset;
     public GameObject rootObject;
 
+    public InputMap input;
+    public InputAction Root;
+
+    private void Awake()
+    {
+        input = new InputMap();
+        input.Enable();
+        Root = input.Map.Root;
+        Root.Enable();
+
+        Root.performed += OnRoot;
+    }
+
+    private void OnRoot(InputAction.CallbackContext context)
+    {
+        if (!nearRoot)
+        {
+            root = rootMax;
+        }
+    }
     void FixedUpdate()
     {
         if (!nearRoot)
