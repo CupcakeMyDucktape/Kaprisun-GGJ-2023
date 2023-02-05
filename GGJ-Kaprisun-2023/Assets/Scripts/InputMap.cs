@@ -44,6 +44,15 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Root"",
+                    ""type"": ""Button"",
+                    ""id"": ""505a3d49-f4b8-4910-a3b1-aea9ac8c7724"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -123,6 +132,17 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
                     ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0cc62c88-b1c9-42f2-9fb3-f175255dc7fe"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Root"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -139,6 +159,7 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
         m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
         m_Map_Move = m_Map.FindAction("Move", throwIfNotFound: true);
         m_Map_Reset = m_Map.FindAction("Reset", throwIfNotFound: true);
+        m_Map_Root = m_Map.FindAction("Root", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -200,12 +221,14 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
     private IMapActions m_MapActionsCallbackInterface;
     private readonly InputAction m_Map_Move;
     private readonly InputAction m_Map_Reset;
+    private readonly InputAction m_Map_Root;
     public struct MapActions
     {
         private @InputMap m_Wrapper;
         public MapActions(@InputMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Map_Move;
         public InputAction @Reset => m_Wrapper.m_Map_Reset;
+        public InputAction @Root => m_Wrapper.m_Map_Root;
         public InputActionMap Get() { return m_Wrapper.m_Map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -221,6 +244,9 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
                 @Reset.started -= m_Wrapper.m_MapActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnReset;
+                @Root.started -= m_Wrapper.m_MapActionsCallbackInterface.OnRoot;
+                @Root.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnRoot;
+                @Root.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnRoot;
             }
             m_Wrapper.m_MapActionsCallbackInterface = instance;
             if (instance != null)
@@ -231,6 +257,9 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
+                @Root.started += instance.OnRoot;
+                @Root.performed += instance.OnRoot;
+                @Root.canceled += instance.OnRoot;
             }
         }
     }
@@ -248,5 +277,6 @@ public partial class @InputMap : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnRoot(InputAction.CallbackContext context);
     }
 }
