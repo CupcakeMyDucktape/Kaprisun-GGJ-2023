@@ -95,7 +95,7 @@ public class PlayerRoots : MonoBehaviour
 
     private void TakeRoot()
     {
-        rootObject = (GameObject)PrefabUtility.InstantiatePrefab(rootPrefab);
+        rootObject = (GameObject)Instantiate(rootPrefab);
         rootObject.transform.position = transform.position;
         rootObject.transform.rotation = transform.rotation;
 
