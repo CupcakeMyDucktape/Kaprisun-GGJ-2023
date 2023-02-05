@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public InputMap input;
     public Rigidbody2D rb;
 
+    public float originalMaxSpeed;
     public float initialMaxSpeed;
     public float initialAcceleration;
     public float rotationSpeed;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        initialMaxSpeed = originalMaxSpeed;
         speed = initialMaxSpeed;
         acceleration = initialAcceleration;
 

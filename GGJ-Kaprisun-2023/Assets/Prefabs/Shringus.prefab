@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -5623176770449930987}
+  originalMaxSpeed: 300
   initialMaxSpeed: 300
   initialAcceleration: 1
   rotationSpeed: 0.2
@@ -124,12 +125,16 @@ MonoBehaviour:
   rootFillRate: 20
   rootDrainRate: 40
   rooted: 0
+  sporeCount: 2
   rootPosition: {x: 0, y: 0, z: 0}
   respawnDelay: 0.5
   respawning: 0
+  terrainBad: 0
+  terrainGood: 0
   playerController: {fileID: 3856083687958194904}
   meshRenderer: {fileID: 3179471877133346383}
   RespawnAnchor: {fileID: 0}
+  LocalRespawnAnchor: {fileID: 0}
   rootPrefab: {fileID: 3671121106079651949, guid: f668c1b800585d641a13f8cbff166750, type: 3}
   rootOffset: {fileID: 1093670710782804542}
   rootObject: {fileID: 0}
