@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5593685478029808313}
   - component: {fileID: 8953677592529296979}
   - component: {fileID: 9189799544518202105}
+  - component: {fileID: 1329705035249102845}
   m_Layer: 0
   m_Name: Unrootable
   m_TagString: Untagged
@@ -161,3 +162,16 @@ MonoBehaviour:
   m_EnableTangents: 0
   m_GeometryCached: 0
   m_UTess2D: 0
+--- !u!114 &1329705035249102845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326033457752647580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d150c6962d5e33540a132c04b984c3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainBad: 1
