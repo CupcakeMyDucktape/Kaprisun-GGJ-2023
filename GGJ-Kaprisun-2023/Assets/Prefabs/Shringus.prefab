@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7560925698349023633}
   m_Layer: 0
   m_Name: Shringus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,6 +65,13 @@ MonoBehaviour:
   rotationSpeed: 0.2
   speed: 0
   acceleration: 0
+  roots:
+  - {fileID: 4655504575219027297}
+  - {fileID: 4873535797348347290}
+  - {fileID: 8961302659270500656}
+  - {fileID: 285620313176453477}
+  - {fileID: 3745581485665116413}
+  playeranim: {fileID: 1315831240359848399}
   move: {x: 0, y: 0}
 --- !u!114 &2801775991909880336
 MonoBehaviour:
@@ -84,12 +91,16 @@ MonoBehaviour:
   rootFillRate: 20
   rootDrainRate: 40
   rooted: 0
+  sporeCount: 0
   rootPosition: {x: 0, y: 0, z: 0}
   respawnDelay: 0.5
   respawning: 0
+  terrainBad: 0
+  terrainGood: 0
   playerController: {fileID: 3856083687958194904}
   meshRenderer: {fileID: 7560925698349023633}
   RespawnAnchor: {fileID: 0}
+  LocalRespawnAnchor: {fileID: 0}
   rootPrefab: {fileID: 3671121106079651949, guid: f668c1b800585d641a13f8cbff166750, type: 3}
   rootOffset: {fileID: 1093670710782804542}
   rootObject: {fileID: 0}
@@ -308,18 +319,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.10380308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.10380308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.10380308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -329,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.854
       objectReference: {fileID: 0}
     - target: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
       propertyPath: m_LocalRotation.w
@@ -368,5 +367,35 @@ PrefabInstance:
 --- !u!4 &7533237531808028312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6589211674955788449, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1315831240359848399 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2429761330569596918, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4655504575219027297 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8314021198232333144, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4873535797348347290 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8095427556843408291, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8961302659270500656 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5739287754605496073, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &285620313176453477 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3462213327396198236, guid: 8f91fa2721ae7944394849921c110449, type: 3}
+  m_PrefabInstance: {fileID: 3745581485618783801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3745581485665116413 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 231671492, guid: 8f91fa2721ae7944394849921c110449, type: 3}
   m_PrefabInstance: {fileID: 3745581485618783801}
   m_PrefabAsset: {fileID: 0}

@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float acceleration;
 
+    public Animator[] roots;
+    public Animator playeranim;
+
     
     private InputAction Move;
     public Vector2 move;
@@ -65,8 +68,23 @@ public class PlayerController : MonoBehaviour
         if (move.magnitude > 0)
         {
             SetRotationToMove();
+
+            foreach (Animator root in roots)
+            {
+                root.SetBool("Rooting", false);
+            }
+            playeranim.SetBool("Root Down", false);
         }
-        else speed = 0f;
+        else
+        {
+            speed = 0f;
+
+            foreach (Animator root in roots)
+            {
+                root.SetBool("Rooting", true);
+            }
+            playeranim.SetBool("Root Down", true);
+        } 
     }
 
     

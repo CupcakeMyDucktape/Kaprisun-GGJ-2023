@@ -1738,14 +1738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1916399665754274863, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 46217ca3f08c1b248a6acbb3ebdec43f, type: 2}
-    - target: {fileID: 1942487255437179854, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 46217ca3f08c1b248a6acbb3ebdec43f, type: 2}
     - target: {fileID: 2801775991909880336, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: RespawnAnchor
       value: 
@@ -1797,14 +1789,6 @@ PrefabInstance:
     - target: {fileID: 3179471877133346381, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
       propertyPath: m_Name
       value: Shringus
-      objectReference: {fileID: 0}
-    - target: {fileID: 3179471877133346381, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7533237531808028312, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.854
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a77e902abdcb54f9bbd423159b504d, type: 3}

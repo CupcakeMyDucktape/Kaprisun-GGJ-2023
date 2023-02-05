@@ -378,7 +378,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 081fc937d8bcd1f439754a425db52266, type: 2}
+  - {fileID: 2100000, guid: 46217ca3f08c1b248a6acbb3ebdec43f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -602,7 +602,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 081fc937d8bcd1f439754a425db52266, type: 2}
+  - {fileID: 2100000, guid: 46217ca3f08c1b248a6acbb3ebdec43f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -780,7 +780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5537009287930647534
 Transform:
   m_ObjectHideFlags: 0
@@ -788,13 +788,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2498588559999538732}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.07353218, y: 0.36700895, z: 0.849956}
+  m_LocalRotation: {x: 0.5948227, y: 0, z: 0, w: 0.80385697}
+  m_LocalPosition: {x: 0.07353218, y: -0.2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5038676195066416376}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 73, y: 0, z: 0}
 --- !u!33 &4829111171197149806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5297827895658059998, guid: ce3ba83072e6808439d7987fb10eafeb, type: 3}
+  - {fileID: 2100000, guid: 9b4d8f10c48067e44ac352aa3f44354a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1299,7 +1299,7 @@ Transform:
   m_GameObject: {fileID: 6794047650058176713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08733702, y: 11.939897, z: -3.1477203}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.10380308, y: 0.10380308, z: 0.10380308}
   m_Children:
   - {fileID: 201942517015461952}
   m_Father: {fileID: 0}
